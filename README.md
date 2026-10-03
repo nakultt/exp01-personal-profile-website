@@ -29,6 +29,20 @@ A responsive, single-page personal profile website built only with semantic HTML
 | Assets | SVG profile avatar |
 | Tools | VS Code, Google Chrome |
 
+## Architecture
+
+```mermaid
+flowchart LR
+    B[Browser] --> H[index.html<br/>semantic HTML5]
+    H --> C[css/style.css<br/>Grid · Flexbox · media query < 768px]
+    H --> S1[header + sticky nav]
+    H --> S2[hero · academic table ·<br/>skills · projects · certifications]
+    H --> S3[address contact · social links · footer]
+    S1 -->|anchor links + smooth scroll| S2
+```
+
+It is a static, client-only page with no JavaScript. Navigation uses in-page anchors with `scroll-behavior: smooth`, and the layout adapts through one media query.
+
 ## Folder Structure
 
 ```
